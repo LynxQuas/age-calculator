@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Age calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- container -->
+
+    <main class="main">
+      <!-- inputs section -->
+
+      <div class="container">
+        <section class="input__container">
+          <div class="input__container--day">
+            <label for="day">Day</label>
+            <input type="text" id="day" class="day__input" placeholder="DD" />
+            <p class="day-error hidden error-model">Error message!</p>
+          </div>
+
+          <div class="input__container--month">
+            <label for="month">Month</label>
+            <input
+              type="text"
+              id="month"
+              class="month__input"
+              placeholder="MM"
+            />
+            <p class="month-error error-model hidden">Error message!</p>
+          </div>
+
+          <div class="input__container--year">
+            <label for="year">Year</label>
+            <input type="text" id="year" class="year__input" placeholder="YY" />
+            <p class="year-error error-model hidden">Error message!</p>
+          </div>
+        </section>
+        <!-- end of the input section -->
+        <hr />
+        <!-- result section -->
+
+        <section class="result">
+          <div class="result__container">
+            <p class="result-year"><span class="year">--</span> years</p>
+            <p class="result-month"><span class="month">--</span> months</p>
+            <p class="result-day"><span class="day">--</span> days</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="input__container--btn">
+        <svg
+          class="button"
+          xmlns="http://www.w3.org/2000/svg"
+          width="46"
+          height="44"
+          viewBox="0 0 46 44"
+        >
+          <g fill="none" stroke="#FFF" stroke-width="2">
+            <path
+              d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"
+            />
+          </g>
+        </svg>
+      </div>
+    </main>
+
+    <!-- <div class="container">
+      <div class="input-container">
+        <div class="input-container__day">
+          <label for="day">DAY</label>
+          <input type="text" maxlength="2" placeholder="DD" class="input-day" />
+          <span class="day-error red hidden">This field is required</span>
+        </div>
+        <div class="input-container__month">
+          <label for="month">MONTH</label>
+          <input
+            type="text"
+            maxlength="2"
+            placeholder="MM"
+            class="input-month"
+          />
+          <span class="month-error red hidden">This field is required</span>
+        </div>
+        <div class="input-container__year">
+          <label for="year">YEAR</label>
+          <input
+            type="text"
+            maxlength="4"
+            placeholder="YYYY"
+            class="input-year"
+          />
+          <span class="year-error red hidden">This field is required!</span>
+        </div>
+      </div>
+      <div>
+        <hr class="break-line" />
+
+        
+      </div>
+      
+    </div> -->
+
+    <!-- <div class="container-1">
+      <main class="container">
+        <header class="date-container">
+          <div class="day-container">
+            <label for="day">day</label>
+
+            <input
+              type="number"
+              class="day-input"
+              id="day"
+              placeholder="DD"
+              oninput="this.value = this.value.slice(0,2)"
+            />
+            <span class="day-error error-model hidden"
+              >This field is required!</span
+            >
+            <span class="day-valid-error error-model hidden"
+              >Must be a valid date!</span
+            >
+          </div>
+
+          <div class="month-container">
+            <label for="month">month</label>
+
+            <input
+              type="number"
+              class="month-input"
+              id="month"
+              placeholder="MM"
+              pattern="\d*"
+              oninput="this.value = this.value.slice(0, 2)"
+            />
+            <span class="month-error error-model hidden"
+              >This field is required!</span
+            >
+            <span class="month-valid-error error-model hidden"
+              >Must be a valid month!</span
+            >
+          </div>
+
+          <div class="year-container">
+            <label for="year">year</label>
+            <input
+              type="number"
+              class="year-input"
+              id="year"
+              placeholder="YYYY"
+              oninput="this.value = this.value.slice(0,4)"
+            />
+            <span class="year-error error-model hidden"
+              >This field is required!</span
+            >
+            <span class="year-valid-error error-model hidden"
+              >Must be in the Past!</span
+            >
+          </div>
+
+          <button class="btn-sumbit">Sumbit</button>
+        </header>
+
+        <main>
+          <div class="result-container">
+            <h1 class="result-year"><span class="year">--</span> Year</h1>
+            <h1 class="result-month"><span class="month">--</span> Months</h1>
+            <h1 class="result-day"><span class="day">--</span> Day</h1>
+          </div>
+        </main>
+      </main>
+    </div> -->
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Lynx</a>.
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
